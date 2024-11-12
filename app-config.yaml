@@ -77,7 +77,7 @@ auth:
         metadataUrl: https://sso-dev.odd.works/realms/poc/.well-known/openid-configuration
         clientId: backstagev1
         clientSecret: YkgKL88swxSV9HQkVP4dB3uJoANb91ot
-        prompt: none
+        prompt: login 
         scopes:
           - openid
           - profile
