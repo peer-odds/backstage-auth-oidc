@@ -21,7 +21,7 @@ import {
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 import { UserSettingsPage } from '@backstage/plugin-user-settings';
-import { apis } from './apis';
+import { apis, KeycloakAuthApiRef } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
@@ -37,6 +37,13 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
+
+const keycloak  = {
+      id: 'keycloak-provider',
+      title: 'Keycloak',
+      message: 'Sign in using Keycloak',
+      apiRef: KeycloakAuthApiRef,
+    }
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -56,8 +63,12 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
+
+  
+  
+
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => <SignInPage {...props} auto providers={[keycloak]} />,
   },
 });
 

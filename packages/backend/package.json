@@ -16,12 +16,17 @@
     "build-image": "docker build ../.. -f Dockerfile --tag backstage"
   },
   "dependencies": {
+    "@backstage/backend-common": "^0.25.0",
     "@backstage/backend-defaults": "^0.5.1",
+    "@backstage/backend-plugin-api": "^1.0.1",
+    "@backstage/catalog-model": "^1.7.0",
     "@backstage/config": "^1.2.0",
     "@backstage/plugin-app-backend": "^0.3.76",
     "@backstage/plugin-auth-backend": "^0.23.1",
     "@backstage/plugin-auth-backend-module-github-provider": "^0.2.1",
     "@backstage/plugin-auth-backend-module-guest-provider": "^0.2.1",
+    "@backstage/plugin-auth-backend-module-oauth2-provider": "^0.3.1",
+    "@backstage/plugin-auth-backend-module-oidc-provider": "^0.3.1",
     "@backstage/plugin-auth-node": "^0.5.3",
     "@backstage/plugin-catalog-backend": "^1.27.0",
     "@backstage/plugin-catalog-backend-module-logs": "^0.1.2",
@@ -42,7 +47,8 @@
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",
     "node-gyp": "^10.0.0",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@backstage/cli": "^0.28.0"
